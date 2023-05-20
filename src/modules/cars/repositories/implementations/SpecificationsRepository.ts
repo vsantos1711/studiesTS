@@ -4,26 +4,26 @@ import {
   ICreateSpecificationDTO,
 } from "../ISpecificationsRepository";
 
-export class CategoriesRepository implements ISpecificationsRepository {
+export class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[];
 
-  private static INSTANCE: CategoriesRepository;
+  private static INSTANCE: SpecificationsRepository;
 
   private constructor() {
     this.specifications = [];
   }
 
-  public static getInstance(): CategoriesRepository {
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
+  public static getInstance(): SpecificationsRepository {
+    if (!SpecificationsRepository.INSTANCE) {
+      SpecificationsRepository.INSTANCE = new SpecificationsRepository();
     }
-    return CategoriesRepository.INSTANCE;
+    return SpecificationsRepository.INSTANCE;
   }
 
   create({ name, description }: ICreateSpecificationDTO): void {
     const specification = new Specification();
 
-    Object.assign(Specification, { name, description, created_at: new Date() });
+    Object.assign(specification, { name, description, created_at: new Date() });
 
     this.specifications.push(specification);
   }

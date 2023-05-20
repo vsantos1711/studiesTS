@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
-class CreateSpecificationController {
+export class CreateSpecificationController {
   constructor(private createSpecificationUseCase: CreateSpecificationUseCase) {}
 
   handle(request: Request, response: Response): Response {
