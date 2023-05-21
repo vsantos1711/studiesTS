@@ -21,14 +21,15 @@ class ImportCategoryUseCase {
 
       parseFile
         .on("data", async (line) => {
-          const { TYPE, DESCRIPTION } = line;
+          const { name, description } = line;
 
           categories.push({
-            name: TYPE,
-            description: DESCRIPTION,
+            name,
+            description,
           });
         })
         .on("end", () => {
+          fs.promises.unlink(file.path);
           resolve(categories);
         })
         .on("erro", (err) => {
