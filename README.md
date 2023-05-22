@@ -37,10 +37,6 @@ e em seguida rodar o seguinte comando:
 pnpm dev
 ```
 
-## :soon: Implementação futura
-
-- [ ] Docker
-
 ## :handshake: Colaboradores
 
 <table>
