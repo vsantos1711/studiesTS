@@ -2,7 +2,7 @@
 
 ## :dart: Status do projeto
 
-<img src="http://img.shields.io/static/v1?label=STATUS&message=MEUS_ESTUDOS&color=BLUE&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=MEUS%20ESTUDOS&color=BLUE&style=for-the-badge"/>
 
 ## :memo: Descrição
 
@@ -10,14 +10,17 @@ App para locação de carros, criado com intuinto de práticar meus conhecimento
 
 ## :books: Funcionalidades
 
-- <b>Cadastar uma cateogira 1</b>: Gera uma pergunta sobre a tabuada para a criança;
-- <b>Funcionalidade 2</b>: Verifica se a reposta está correta;
-- <b>Funcionalidade 3</b>: Caso a resposta esteja errada, exibe a tabuada para a criança e gera uma nova pergunta.
+- <b>Funcionalidade 1</b>: Rota para cadastrar uma especificação;
+- <b>Funcionalidade 2</b>: Rota para cadastrar uma categoria;
+- <b>Funcionalidade 3</b>: Rota para importar uma lista de categorias.
+- <b>Funcionalidade 4</b>: Rota para listar as especificação.
+- <b>Funcionalidade 5</b>: Rota para listar as categorias.
 
 ## :wrench: Tecnologias utilizadas
 
 - TypeScript;
 - Express;
+- Swagger;
 
 ## :rocket: Rodando o projeto
 
