@@ -9,6 +9,7 @@
 App para locação de carros, criado com intuinto de práticar meus conhecimentos em TypeScript
 
 ## :books: Funcionalidades
+
 ### Rota para a documentação da api: **"/api-docs"**
 
 - <b>Funcionalidade 1</b>: Rota para cadastrar uma especificação;
@@ -22,6 +23,7 @@ App para locação de carros, criado com intuinto de práticar meus conhecimento
 - TypeScript;
 - Express;
 - Swagger;
+- TypeORM
 
 ## :rocket: Rodando o projeto
 
