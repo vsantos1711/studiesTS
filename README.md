@@ -23,7 +23,8 @@ App para locação de carros, criado com intuinto de práticar meus conhecimento
 - TypeScript;
 - Express;
 - Swagger;
-- TypeORM
+- Docker;
+- Prisma;
 
 ## :rocket: Rodando o projeto
 
