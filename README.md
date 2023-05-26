@@ -14,7 +14,7 @@ App para locação de carros, criado com intuinto de práticar meus conhecimento
 
 - <b>Funcionalidade 1</b>: Rota para cadastrar uma especificação;
 - <b>Funcionalidade 2</b>: Rota para cadastrar uma categoria;
-- <b>Funcionalidade 3</b>: Rota para importar uma lista de categorias.
+- <b>Funcionalidade 3</b>: Rota para importar uma lista de categorias (Arquivo CSV).
 - <b>Funcionalidade 4</b>: Rota para listar as especificação.
 - <b>Funcionalidade 5</b>: Rota para listar as categorias.
 
