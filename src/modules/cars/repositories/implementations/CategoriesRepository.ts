@@ -36,11 +36,13 @@ export class CategoriesRepository implements ICategoriesRepository {
     return categories;
   }
 
-  findByName(name: string): Category {
-    const categoryAlreadyExists = this.categories.find(
-      (category) => category.name === name
-    );
+  async findByName(categoryName: string): Promise<Category> {
+    const category = await prisma.category.findFirst({
+      where: {
+        name: categoryName,
+      },
+    });
 
-    return categoryAlreadyExists;
+    return category || null;
   }
 }
