@@ -19,3 +19,12 @@ model Category {
 
   @@map("categories")
 }
+
+model Specificatipon {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String
+  create_at   DateTime @default(now())
+
+  @@map("specifications")
+}
