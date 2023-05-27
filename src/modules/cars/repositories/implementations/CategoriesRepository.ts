@@ -4,6 +4,7 @@ import {
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
 
+import { prisma } from "../../../../database/prismaClient";
 export class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
@@ -20,12 +21,13 @@ export class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ name, description }: ICreateCategoryDTO): void {
-    const category = new Category();
-
-    Object.assign(category, { name, description, created_at: new Date() });
-
-    this.categories.push(category);
+  async create({ name, description }: ICreateCategoryDTO): Promise<any> {
+    const category = await prisma.category.create({
+      data: {
+        name,
+        description,
+      },
+    });
   }
 
   list(): Category[] {
