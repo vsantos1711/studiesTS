@@ -30,8 +30,10 @@ export class CategoriesRepository implements ICategoriesRepository {
     });
   }
 
-  list(): Category[] {
-    return this.categories;
+  async list(): Promise<Category[]> {
+    const categories = await prisma.category.findMany();
+
+    return categories;
   }
 
   findByName(name: string): Category {
