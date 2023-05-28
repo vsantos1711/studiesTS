@@ -20,7 +20,7 @@ model Category {
   @@map("categories")
 }
 
-model Specificatipon {
+model Specification {
   id          String   @id @default(uuid())
   name        String   @unique
   description String

@@ -4,7 +4,7 @@ import { SpecificationsRepository } from "../../repositories/implementations/Spe
 export class ListSpecificationsUseCase {
   constructor(private specificationsRepository: SpecificationsRepository) {}
 
-  execute(): Specification[] {
+  execute(): Promise<Specification[]> {
     return this.specificationsRepository.list();
   }
 }

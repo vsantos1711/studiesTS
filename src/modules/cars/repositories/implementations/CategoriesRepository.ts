@@ -1,12 +1,11 @@
 import { Category } from "../../models/Category";
+import { prisma } from "../../../../database/prismaClient";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
-
-import { prisma } from "../../../../database/prismaClient";
 export class CategoriesRepository implements ICategoriesRepository {
-  async create({ name, description }: ICreateCategoryDTO): Promise<any> {
+  async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = await prisma.category.create({
       data: {
         name,

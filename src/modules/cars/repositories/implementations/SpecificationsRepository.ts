@@ -1,42 +1,32 @@
 import { Specification } from "../../models/Specification";
+import { prisma } from "../../../../database/prismaClient";
 import {
   ISpecificationsRepository,
   ICreateSpecificationDTO,
 } from "../ISpecificationsRepository";
 
 export class SpecificationsRepository implements ISpecificationsRepository {
-  private specifications: Specification[];
-
-  private static INSTANCE: SpecificationsRepository;
-
-  private constructor() {
-    this.specifications = [];
+  async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
+    const specifications = await prisma.specification.create({
+      data: {
+        name,
+        description,
+      },
+    });
   }
 
-  public static getInstance(): SpecificationsRepository {
-    if (!SpecificationsRepository.INSTANCE) {
-      SpecificationsRepository.INSTANCE = new SpecificationsRepository();
-    }
-    return SpecificationsRepository.INSTANCE;
+  async list(): Promise<Specification[]> {
+    const specifications = await prisma.specification.findMany();
+    return specifications;
   }
 
-  create({ name, description }: ICreateSpecificationDTO): void {
-    const specification = new Specification();
+  async findByName(specificationName: string): Promise<Specification> {
+    const specification = await prisma.specification.findFirst({
+      where: {
+        name: specificationName,
+      },
+    });
 
-    Object.assign(specification, { name, description, created_at: new Date() });
-
-    this.specifications.push(specification);
-  }
-
-  list(): Specification[] {
-    return this.specifications;
-  }
-
-  findByName(name: string): Specification {
-    const SpecificationAlreadyExists = this.specifications.find(
-      (specification) => specification.name === name
-    );
-
-    return SpecificationAlreadyExists;
+    return specification || null;
   }
 }

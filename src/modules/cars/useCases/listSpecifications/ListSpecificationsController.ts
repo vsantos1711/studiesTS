@@ -4,9 +4,9 @@ import { ListSpecificationsUseCase } from "../listSpecifications/ListSpecificati
 export class ListSpecificationsController {
   constructor(private listSpecificationsUseCase: ListSpecificationsUseCase) {}
 
-  handle(request: Request, response: Response): Response {
-    const allSpecificaitons = this.listSpecificationsUseCase.execute();
+  async handle(request: Request, response: Response): Promise<Response> {
+    const allSpecificaitons = await this.listSpecificationsUseCase.execute();
 
-    return response.send(allSpecificaitons);
+    return response.json(allSpecificaitons);
   }
 }
