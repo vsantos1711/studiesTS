@@ -7,7 +7,7 @@ import {
 
 export class SpecificationsRepository implements ISpecificationsRepository {
   async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
-    const specifications = await prisma.specification.create({
+    await prisma.specification.create({
       data: {
         name,
         description,

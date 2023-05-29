@@ -6,7 +6,7 @@ import {
 } from "../ICategoriesRepository";
 export class CategoriesRepository implements ICategoriesRepository {
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
-    const category = await prisma.category.create({
+    await prisma.category.create({
       data: {
         name,
         description,
